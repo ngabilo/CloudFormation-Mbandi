@@ -1,12 +1,12 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: "EC2 instance automation for our develpement  environment"
-Metadata: {}
+Description: "ec2 instance automation for our developement environment"
+#Metadata: 
 
-Parameters: {}
+#Parameters: 
 
-Mappings: {}
+#Mappings: 
 
-Conditions: {}
+#Conditions: 
 
 Resources: 
   myEC2Instance:
@@ -26,4 +26,4 @@ Resources:
         - Key: key
           Value: value
 
-Outputs: {}
+#Outputs:

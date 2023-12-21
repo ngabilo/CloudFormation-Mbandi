@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: "EC2 instance automation for our develpement  environment"
+Description: "ec2 instance automation for our developement environment"
 Metadata: 
 
 Parameters: 
