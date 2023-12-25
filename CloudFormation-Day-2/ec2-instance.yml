@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: "EC2 instance automation for our develpement  environment"
+Description: "ec2 instance automation for our developement environment"
 Metadata: {}
 
 Parameters: {}
@@ -9,17 +9,17 @@ Mappings: {}
 Conditions: {}
 
 Resources: 
-  DeveWebserver:
+  DevWebserver:
     Type: AWS::EC2::Instance
     Properties:
-      KeyName: engabe
-      ImageId: ami-053b0d53c279acc90
+      KeyName: engabe 
+      ImageId: ami-0c7217cdde317cfec
       InstanceType: t2.micro
       Monitoring: true
       SecurityGroupIds:
-        - sg-0eb03bae4dd640d56
+        - sg-0addd1bd14a73bae6
       UserData: !Base64 |
-        #!/bin/bash
+        #!/bin/bash -ex
         sudo su
         apt update -y
         apt -y install apache2
@@ -31,8 +31,8 @@ Resources:
         unzip jjtech-streaming-application-v1.zip
         rm -f /var/www/html/index.html
         cp -rf jjtech-streaming-application-v1/* /var/www/html/
-      Tags:
+      Tags: 
         - Key: Name
-          Value: DeveWebserver
+          Value: evWebserver
 
-Outputs: {}
+Outputs:  {}
