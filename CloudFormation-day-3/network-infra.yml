@@ -1,15 +1,19 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: this templete provision the dev network environment
+Description: this template provisions our dev network environment.
 Metadata: {}
 
-Parameters: {}
+Parameters: 
+  paramName:
+    Description: 
+    Type: String|Number|CommaDelimitedList
+    Default: -
 
 Mappings: {}
 
 Conditions: {}
 
 Resources: 
-  # developement vpc
+  # Development VPC
   DevVPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -18,9 +22,9 @@ Resources:
       Tags:
         - Key: Name
           Value: DevVPC
-
-  #webserver subnet
-  DevWebserverSubnet:
+  
+  # Webserver subnet for dev VPC
+  DevWebServerSubnet:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-1a
@@ -28,10 +32,10 @@ Resources:
       CidrBlock: 10.0.1.0/24
       Tags:
         - Key: Name
-          Value: DevWebserverSubnet
+          Value: WebServerSubnet
 
-  #appserver subnet
-  DevAppserverSubnet:
+  # Appserver subnet for dev VPC
+  DevAppServerSubnet:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-1a
@@ -39,10 +43,10 @@ Resources:
       CidrBlock: 10.0.2.0/24
       Tags:
         - Key: Name
-          Value: DevAppserverSubnet  
+          Value: DevAppServerSubnet
 
-  #database subnet
-  DevDatabaseSubnet:
+  # Database subnet for dev VPC
+  DevDBServerSubnet:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-1a
@@ -50,6 +54,5 @@ Resources:
       CidrBlock: 10.0.3.0/24
       Tags:
         - Key: Name
-          Value: DevDatabaseSubnet              
-
+          Value: DevDBServerSubnet
 Outputs: {}

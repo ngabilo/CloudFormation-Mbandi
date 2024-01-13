@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This template creates an EC2 Instace for the dev environment.
+Metadata: {}
+
+Parameters: {}
+
+Mappings: {}
+
+Conditions: {}
+
+Resources: 
+  DevEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: engabe
+      ImageId: ami-0005e0cfe09cc9050
+      InstanceType: t2.micro
+      Tags:
+        - Key: Name
+          Value: DevEC2Instance
+
+Outputs: {}
